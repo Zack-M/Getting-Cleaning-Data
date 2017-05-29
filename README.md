@@ -40,7 +40,7 @@ Features, activity and subject are merged to form `completeData` and the indices
 
 Activity column in extractedData is updated with descriptive names of activities taken from activityLabels. Activity column is expressed as a factor variable. Acronyms in variable names in extractedData, like 'Acc', 'Gyro', 'Mag', 't' and 'f' are replaced with descriptive labels such as 'Accelerometer', 'Gyroscpoe', 'Magnitude', 'Time' and 'Frequency'.
 
-And, `tidyData` is created as a set with average for each activity and subject of `extractedData`. Entries in tidyData are ordered based on activity, subject, and the data in tidyData is written into `Tidy.txt`.
+`tidyData` is created as a set with average for each activity and subject of `extractedData`. Entries in tidyData are ordered based on activity, subject, and the data in tidyData is written into `Tidy.txt`.
 
 ## Output Data Set
 The output data `Tidy.txt` is a a space-delimited value file. It contains the mean and standard deviation values of the data contained in the input files.
