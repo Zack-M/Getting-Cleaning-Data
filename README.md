@@ -20,7 +20,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## ```R Script with comments```
+### ```R Script Highlights```
 
 ### Loading reqd. packages & libraries
 library(data.table)
@@ -90,12 +90,12 @@ Similarly replace original colnames by their respective variable names viz.
 "Gyroscope","Body", "Magnitude", "Time", "Frequency", "TimeBody","Mean", "STD", "Frequency", "Angle", and "Gravity." 
 
 
-### 5. Creating tidy data with mean values for each activity
+## 5. Creating tidy data with mean values for each activity
 
 extractedData$Subject <- as.factor(extractedData$Subject)
 extractedData <- data.table(extractedData)
 
-### 6. Creating the "Tidy.txt" file
+## 6. Creating the "Tidy.txt" file
 tidyData <- aggregate(. ~Subject + Activity, extractedData, mean)
 tidyData <- tidyData[order(tidyData$Subject,tidyData$Activity),]
 write.table(tidyData, file = "Tidy.txt", row.names = FALSE)
