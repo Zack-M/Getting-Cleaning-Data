@@ -1,4 +1,4 @@
-## Codebook Getting & Cleaning Data
+## Codebook: Getting & Cleaning Data
 Using R packages for extracting, transforming and analyzing UCI ML repo data 
 
 ## Dataset used
