@@ -20,14 +20,15 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## R Script with comments
+## *R Script with comments
 
+### Loading reqd. packages & libraries
 library(data.table)
 library(dplyr)
 
-### Set Working Dir., 
+### 0. Setting The Working Directory, 
 #### prefer no spaces in variable, file & folder names.
-setwd("/Users/sacmallya/UCI-HAR-Dataset")
+setwd("/Users/zack-m/UCI-HAR-Dataset")
 
 ### Reading metadata files
 featureNames <- read.table("features.txt")
@@ -103,7 +104,7 @@ names(extractedData)
 extractedData$Subject <- as.factor(extractedData$Subject)
 extractedData <- data.table(extractedData)
 
-### Creating the "Tidy.txt" file
+### 6. Creating the "Tidy.txt" file
 tidyData <- aggregate(. ~Subject + Activity, extractedData, mean)
 tidyData <- tidyData[order(tidyData$Subject,tidyData$Activity),]
 write.table(tidyData, file = "Tidy.txt", row.names = FALSE)
