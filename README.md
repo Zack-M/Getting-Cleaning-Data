@@ -3,6 +3,7 @@ Using R packages for extracting, transforming and analyzing UCI ML repo data
 
 ## Dataset used
 UCI HAR (Univ. of Calif. @ Irvine, Human Activity Recognition ML repo)
+
 url "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
 ## Input Data & Variables
@@ -31,10 +32,15 @@ url "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20
 
 ## Data Transformation
 
-Each input file is read into its respective variable and the subjects in training and test set data are merged to form `subject`. The activities in training and test set data are merged to form `activity`. The features of test and training are merged to form features and the name of the `features` are set in features from `featureNames`.
-Features, activity and subject are merged to form `completeData` and the indices of columns that contain std or mean, activity and subject are taken into requiredColumns. The extractedData is created with data from columns in requiredColumns.
+Each input file is read into its respective variable and the subjects in training and test set data are merged to form `subject`. The activities in training and test set data are merged to form `activity`. 
+
+The features of test and training are merged to form features and the name of the `features` are set in features from `featureNames`.
+
+Features, activity and subject are merged to form `completeData` and the indices of columns that contain std or mean, activity and subject are taken into `requiredColumns`. And, `extractedData` is created with data from columns in `requiredColumns`.
+
 Activity column in extractedData is updated with descriptive names of activities taken from activityLabels. Activity column is expressed as a factor variable. Acronyms in variable names in extractedData, like 'Acc', 'Gyro', 'Mag', 't' and 'f' are replaced with descriptive labels such as 'Accelerometer', 'Gyroscpoe', 'Magnitude', 'Time' and 'Frequency'.
-And the `tidyData` is created as a set with average for each activity and subject of `extractedData`. Entries in tidyData are ordered based on activity and subject and the data in tidyData is written into `Tidy.txt`
+
+And, `tidyData` is created as a set with average for each activity and subject of `extractedData`. Entries in tidyData are ordered based on activity, subject, and the data in tidyData is written into `Tidy.txt`.
 
 ## Output Data Set
 The output data `Tidy.txt` is a a space-delimited value file. It contains the mean and standard deviation values of the data contained in the input files.
