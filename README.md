@@ -20,7 +20,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## *R Script with comments
+## ```R Script with comments```
 
 ### Loading reqd. packages & libraries
 library(data.table)
@@ -85,19 +85,10 @@ names(extractedData)
 ### Renaming variables from labels
 
 names(extractedData)<-gsub("Acc", "Accelerometer", names(extractedData))
-names(extractedData)<-gsub("Gyro", "Gyroscope", names(extractedData))
-names(extractedData)<-gsub("BodyBody", "Body", names(extractedData))
-names(extractedData)<-gsub("Mag", "Magnitude", names(extractedData))
-names(extractedData)<-gsub("^t", "Time", names(extractedData))
-names(extractedData)<-gsub("^f", "Frequency", names(extractedData))
-names(extractedData)<-gsub("tBody", "TimeBody", names(extractedData))
-names(extractedData)<-gsub("-mean()", "Mean", names(extractedData), ignore.case = TRUE)
-names(extractedData)<-gsub("-std()", "STD", names(extractedData), ignore.case = TRUE)
-names(extractedData)<-gsub("-freq()", "Frequency", names(extractedData), ignore.case = TRUE)
-names(extractedData)<-gsub("angle", "Angle", names(extractedData))
-names(extractedData)<-gsub("gravity", "Gravity", names(extractedData))
 
-names(extractedData)
+Similarly replace original colnames by their respective variable names viz.
+"Gyroscope","Body", "Magnitude", "Time", "Frequency", "TimeBody","Mean", "STD", "Frequency", "Angle", and "Gravity." 
+
 
 ### 5. Creating tidy data with mean values for each activity
 
